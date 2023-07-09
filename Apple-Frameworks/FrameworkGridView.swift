@@ -14,12 +14,12 @@ struct FrameworkGridView: View {
                                GridItem(.flexible())]
     
     var body: some View {
-        LazyVGrid(columns: columns) {
-            FrameworkTitleView(name: "arkit", imageName: "arkit")
-            FrameworkTitleView(name: "arkit", imageName: "arkit")
-            FrameworkTitleView(name: "arkit", imageName: "arkit")
-            FrameworkTitleView(name: "arkit", imageName: "arkit")
-            FrameworkTitleView(name: "arkit", imageName: "arkit")
+        NavigationView {
+            LazyVGrid(columns: columns) {
+                ForEach(MockData.frameworks) { framework in
+                    FrameworkTitleView(framework: framework)
+                }
+            }
         }
     }
 }
@@ -27,20 +27,20 @@ struct FrameworkGridView: View {
 struct FrameworkGridView_Previews: PreviewProvider {
     static var previews: some View {
         FrameworkGridView()
+            .preferredColorScheme(.dark)
     }
 }
 
 struct FrameworkTitleView: View {
-    let name: String
-    let imageName: String
+    let framework: Framework
     
     var body: some View {
         VStack {
-            Image(name)
+            Image(framework.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 90, height: 90)
-            Text(imageName)
+            Text(framework.name)
                 .font(.title2)
                 .fontWeight(.semibold)
                 .scaledToFit() // shrink if needed
