@@ -9,7 +9,17 @@ import SwiftUI
 
 struct FrameworkGridView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image("arkit")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 90, height: 90)
+            Text("arkit")
+                .font(.title2)
+                .fontWeight(.semibold)
+                .scaledToFit() // shrink if needed
+                .minimumScaleFactor(0.6) // but only shrink by 60%
+        }
     }
 }
 
