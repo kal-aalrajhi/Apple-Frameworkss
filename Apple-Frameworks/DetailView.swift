@@ -10,10 +10,27 @@ import SwiftUI
 struct DetailView: View {
     var body: some View {
         VStack {
+            HStack {
+                Spacer()
+                Button {
+                    //
+                } label: {
+                    Image(systemName: "x.circle.fill")
+                        .imageScale(.large)
+                        .frame(width: 44, height: 44)
+                }
+            }
+            .padding()
+
             Spacer()
             FrameworkTitleView(framework: MockData.frameworks[0])
             FrameworkDetailView(description: MockData.frameworks[0].description,
                                 frameworkURL: MockData.frameworks[0].urlString)
+            Button {
+                //                Link("", destination: URL(string: frameworkURL)!)
+            } label: {
+                AFButton(title: "Learn More")
+            }
         }
     }
 }
@@ -34,16 +51,6 @@ struct FrameworkDetailView: View {
             Text(description)
                 .padding()
             Spacer()
-            Button {
-//                Link("", destination: URL(string: frameworkURL)!)
-            } label: {
-                Text("Learn More")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .frame(width: 300, height: 60)
-                    .background(.red)
-                    .cornerRadius(10)
-            }
         }
     }
 }
