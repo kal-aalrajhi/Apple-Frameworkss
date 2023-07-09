@@ -13,6 +13,7 @@
 		B7E7ED992A5B04B100485BAC /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E7ED982A5B04B100485BAC /* Framework.swift */; };
 		B7E7ED9B2A5B051900485BAC /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E7ED9A2A5B051900485BAC /* MockData.swift */; };
 		B7E7ED9D2A5B05C200485BAC /* FrameworkGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E7ED9C2A5B05C200485BAC /* FrameworkGridView.swift */; };
+		B7E7ED9F2A5B188300485BAC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E7ED9E2A5B188300485BAC /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		B7E7ED982A5B04B100485BAC /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
 		B7E7ED9A2A5B051900485BAC /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		B7E7ED9C2A5B05C200485BAC /* FrameworkGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkGridView.swift; sourceTree = "<group>"; };
+		B7E7ED9E2A5B188300485BAC /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				B7E7ED8A2A5B037400485BAC /* Apple_FrameworksApp.swift */,
+				B7E7ED9E2A5B188300485BAC /* DetailView.swift */,
 				B7E7ED9C2A5B05C200485BAC /* FrameworkGridView.swift */,
 				B7E7ED982A5B04B100485BAC /* Framework.swift */,
 				B7E7ED9A2A5B051900485BAC /* MockData.swift */,
@@ -146,6 +149,7 @@
 				B7E7ED9B2A5B051900485BAC /* MockData.swift in Sources */,
 				B7E7ED9D2A5B05C200485BAC /* FrameworkGridView.swift in Sources */,
 				B7E7ED992A5B04B100485BAC /* Framework.swift in Sources */,
+				B7E7ED9F2A5B188300485BAC /* DetailView.swift in Sources */,
 				B7E7ED8B2A5B037400485BAC /* Apple_FrameworksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
