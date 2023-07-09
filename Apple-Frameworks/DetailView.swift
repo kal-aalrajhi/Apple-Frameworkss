@@ -37,7 +37,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(framework: MockData.frameworks[0])
             .preferredColorScheme(.dark)
     }
 }
