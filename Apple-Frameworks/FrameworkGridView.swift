@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct FrameworkGridView: View {
-    // Three Columns
+    
+    // We're dealing with a class, we don't need to destroy/recreate (so we are not going to use @State)
+    // @StateObject allows us to hold state
+    @StateObject var viewModelClass = FrameworkGridViewModel()
+    
     let columns: [GridItem] = [GridItem(.flexible()),
                                GridItem(.flexible()),
                                GridItem(.flexible())]
@@ -20,13 +24,16 @@ struct FrameworkGridView: View {
                     ForEach(MockData.frameworks) { framework in
                         FrameworkTitleView(framework: framework)
                             .onTapGesture {
-                                print("")
+                                viewModelClass.selectedFramework = framework
                             }
                     }
                 }
             }
             .navigationTitle("Apple Frameworks")
             .padding(.top, 15)
+            .sheet(isPresented: $viewModelClass.isShowingDetailView) {
+                FrameworkDetailView(description: <#T##String#>, frameworkURL: <#T##String#>)
+            }
         }
     }
 }
