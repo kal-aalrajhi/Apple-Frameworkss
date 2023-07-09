@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DetailView: View {
+    var framework: Framework
+    
     var body: some View {
         VStack {
             HStack {
@@ -23,9 +25,8 @@ struct DetailView: View {
             .padding()
 
             Spacer()
-            FrameworkTitleView(framework: MockData.frameworks[0])
-            FrameworkDetailView(description: MockData.frameworks[0].description,
-                                frameworkURL: MockData.frameworks[0].urlString)
+            FrameworkTitleView(framework: framework)
+            FrameworkDetailView(framework: framework)
             Button {
                 //                Link("", destination: URL(string: frameworkURL)!)
             } label: {
@@ -43,12 +44,11 @@ struct DetailView_Previews: PreviewProvider {
 }
 
 struct FrameworkDetailView: View {
-    let description: String
-    let frameworkURL: String
+    let framework: Framework
     
     var body: some View {
         VStack {
-            Text(description)
+            Text(framework.description)
                 .padding()
             Spacer()
         }
