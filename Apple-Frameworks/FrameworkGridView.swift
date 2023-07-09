@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct FrameworkGridView: View {
-    let columns: [GridItem] = [GridItem(.flexible())]
+    // Three Columns
+    let columns: [GridItem] = [GridItem(.flexible()),
+                               GridItem(.flexible()),
+                               GridItem(.flexible())]
     
     var body: some View {
-        FrameworkTitleView(name: "arkit", imageName: "arkit")
+        LazyVGrid(columns: columns) {
+            FrameworkTitleView(name: "arkit", imageName: "arkit")
+            FrameworkTitleView(name: "arkit", imageName: "arkit")
+            FrameworkTitleView(name: "arkit", imageName: "arkit")
+            FrameworkTitleView(name: "arkit", imageName: "arkit")
+            FrameworkTitleView(name: "arkit", imageName: "arkit")
+        }
     }
 }
 
