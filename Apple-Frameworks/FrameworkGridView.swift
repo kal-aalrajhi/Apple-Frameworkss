@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct FrameworkGridView: View {
+    let columns: [GridItem] = [GridItem(.flexible())]
+    
     var body: some View {
-        VStack {
-            FrameworkTitleView(name: "arkit", imageName: "arkit")
-        }
+        FrameworkTitleView(name: "arkit", imageName: "arkit")
     }
 }
 
