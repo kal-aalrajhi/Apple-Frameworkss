@@ -12,6 +12,7 @@ struct DetailView: View {
     // Binding will copy the state of its parent view
     // the parent is in our gridview
     @Binding var isShowingDetailView: Bool
+    @State private var isShowingSafariView = false
     
     var body: some View {
         VStack {
@@ -31,11 +32,14 @@ struct DetailView: View {
             FrameworkTitleView(framework: framework)
             FrameworkDetailView(framework: framework)
             Button {
-                //                Link("", destination: URL(string: frameworkURL)!)
+                isShowingSafariView = true
             } label: {
                 AFButton(title: "Learn More")
             }
         }
+        .sheet(isPresented: $isShowingSafariView,
+               content: { SafariView(url: URL(string: framework.urlString)!)
+        })
     }
 }
 
