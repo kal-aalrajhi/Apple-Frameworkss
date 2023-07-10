@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct DetailView: View {
+    var framework: Framework
+    // Binding will copy the state of its parent view
+    // the parent is in our gridview
+    @Binding var isShowingDetailView: Bool
+    
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 Button {
-                    //
+                    isShowingDetailView = false
                 } label: {
                     Image(systemName: "x.circle.fill")
                         .imageScale(.large)
@@ -23,9 +28,8 @@ struct DetailView: View {
             .padding()
 
             Spacer()
-            FrameworkTitleView(framework: MockData.frameworks[0])
-            FrameworkDetailView(description: MockData.frameworks[0].description,
-                                frameworkURL: MockData.frameworks[0].urlString)
+            FrameworkTitleView(framework: framework)
+            FrameworkDetailView(framework: framework)
             Button {
                 //                Link("", destination: URL(string: frameworkURL)!)
             } label: {
@@ -37,18 +41,17 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(framework: MockData.frameworks[0], isShowingDetailView: .constant(false))
             .preferredColorScheme(.dark)
     }
 }
 
 struct FrameworkDetailView: View {
-    let description: String
-    let frameworkURL: String
+    let framework: Framework
     
     var body: some View {
         VStack {
-            Text(description)
+            Text(framework.description)
                 .padding()
             Spacer()
         }
