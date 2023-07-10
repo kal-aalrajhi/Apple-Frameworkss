@@ -9,13 +9,16 @@ import SwiftUI
 
 struct DetailView: View {
     var framework: Framework
+    // Binding will copy the state of its parent view
+    // the parent is in our gridview
+    @Binding var isShowingDetailView: Bool
     
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 Button {
-                    //
+                    isShowingDetailView = false
                 } label: {
                     Image(systemName: "x.circle.fill")
                         .imageScale(.large)
@@ -38,7 +41,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(framework: MockData.frameworks[0])
+        DetailView(framework: MockData.frameworks[0], isShowingDetailView: .constant(false))
             .preferredColorScheme(.dark)
     }
 }
