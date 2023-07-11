@@ -16,17 +16,7 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Button {
-                    isShowingDetailView = false
-                } label: {
-                    Image(systemName: "x.circle.fill")
-                        .imageScale(.large)
-                        .frame(width: 44, height: 44)
-                }
-            }
-            .padding()
+            DismissButton(isShowingModal: $isShowingDetailView)
 
             Spacer()
             FrameworkTitleView(framework: framework)
