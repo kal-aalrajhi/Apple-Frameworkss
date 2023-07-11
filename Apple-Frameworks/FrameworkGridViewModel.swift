@@ -14,13 +14,14 @@ final class FrameworkGridViewModel: ObservableObject {
     
     // Make it optional b/c no initial value
     var selectedFramework: Framework? {
-        didSet {
-            isShowingDetailView = true
-        }
+        didSet { isShowingDetailView = true }
     }
     
     // Our grid view needs to listen to changes here
     // @Published allows us to listen for changes
     @Published var isShowingDetailView = false
     
+    let columns: [GridItem] = [GridItem(.flexible()),
+                               GridItem(.flexible()),
+                               GridItem(.flexible())]
 }

@@ -13,14 +13,10 @@ struct FrameworkGridView: View {
     // @StateObject allows us to hold state
     @StateObject var viewModelClass = FrameworkGridViewModel()
     
-    let columns: [GridItem] = [GridItem(.flexible()),
-                               GridItem(.flexible()),
-                               GridItem(.flexible())]
-    
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: columns) {
+                LazyVGrid(columns: viewModelClass.columns) {
                     ForEach(MockData.frameworks) { framework in
                         FrameworkTitleView(framework: framework)
                             .onTapGesture {
