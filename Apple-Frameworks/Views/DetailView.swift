@@ -16,30 +16,29 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Button {
-                    isShowingDetailView = false
-                } label: {
-                    Image(systemName: "x.circle.fill")
-                        .imageScale(.large)
-                        .frame(width: 44, height: 44)
-                }
-            }
-            .padding()
+            DismissButton(isShowingModal: $isShowingDetailView)
 
             Spacer()
             FrameworkTitleView(framework: framework)
             FrameworkDetailView(framework: framework)
-            Button {
-                isShowingSafariView = true
-            } label: {
+            
+            Link(destination: URL(string: framework.urlString) ?? URL(string: "www.apple.com")!) {
                 AFButton(title: "Learn More")
             }
+            
+//            Button {
+//                isShowingSafariView = true
+//            } label: {
+////                AFButton(title: "Learn More")
+//                Label("Learn More", systemImage: "book.fill")
+//            }
+//            .buttonStyle(.bordered)
+//            .controlSize(.large)
+//            .tint(.red)
         }
-        .fullScreenCover(isPresented: $isShowingSafariView,
-               content: { SafariView(url: URL(string: framework.urlString)!)
-        })
+//        .fullScreenCover(isPresented: $isShowingSafariView,
+//               content: { SafariView(url: URL(string: framework.urlString)!)
+//        })
     }
 }
 
