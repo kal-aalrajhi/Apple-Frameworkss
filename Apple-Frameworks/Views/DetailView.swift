@@ -21,19 +21,24 @@ struct DetailView: View {
             Spacer()
             FrameworkTitleView(framework: framework)
             FrameworkDetailView(framework: framework)
-            Button {
-                isShowingSafariView = true
-            } label: {
-//                AFButton(title: "Learn More")
-                Label("Learn More", systemImage: "book.fill")
+            
+            Link(destination: URL(string: framework.urlString) ?? URL(string: "www.apple.com")!) {
+                AFButton(title: "Learn More")
             }
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
-            .tint(.red)
+            
+//            Button {
+//                isShowingSafariView = true
+//            } label: {
+////                AFButton(title: "Learn More")
+//                Label("Learn More", systemImage: "book.fill")
+//            }
+//            .buttonStyle(.bordered)
+//            .controlSize(.large)
+//            .tint(.red)
         }
-        .fullScreenCover(isPresented: $isShowingSafariView,
-               content: { SafariView(url: URL(string: framework.urlString)!)
-        })
+//        .fullScreenCover(isPresented: $isShowingSafariView,
+//               content: { SafariView(url: URL(string: framework.urlString)!)
+//        })
     }
 }
 

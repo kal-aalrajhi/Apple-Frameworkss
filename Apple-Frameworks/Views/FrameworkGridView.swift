@@ -27,10 +27,10 @@ struct FrameworkGridView: View {
             }
             .navigationTitle("Apple Frameworks")
             .padding(.top, 15)
-            .sheet(isPresented: $viewModelClass.isShowingDetailView) {
-                DetailView(framework: viewModelClass.selectedFramework ?? MockData.frameworks[0],
-                           isShowingDetailView: $viewModelClass.isShowingDetailView)
-            }
+//            .sheet(isPresented: $viewModelClass.isShowingDetailView) {
+//                DetailView(framework: viewModelClass.selectedFramework ?? MockData.frameworks[0],
+//                           isShowingDetailView: $viewModelClass.isShowingDetailView)
+//            }
         }
     }
 }
